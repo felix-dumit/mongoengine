@@ -563,7 +563,7 @@ class DateTimeField(BaseField):
         if isinstance(value, datetime.date):
             return datetime.datetime(value.year, value.month, value.day)
         if isinstance(value, int) or isinstance(value, float):
-            return datetime.datetime.parsetimestamp(value)
+            return datetime.datetime.fromtimestamp(value)
         if callable(value):
             return value()
 
